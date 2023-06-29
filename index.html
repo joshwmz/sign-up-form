@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="reset.css">
+    <script src="javascript.js" defer></script>
     <title>Sign-up Form</title>
 </head>
 <body>
 
-    <div id="leftpage">
+    <div id="left-page">
 
-        <div id="blackbox">
+        <div id="box-b">
             <img src="img/icon.png" alt="odin icon">
             <div id="logo">ODIN</div>
         </div>
@@ -20,42 +21,57 @@
     
     </div>
 
-    <div id="rightpage">
+    <div id="right-page">
 
-        <div class="text one">
+        <div class="text t-one">
             <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.</p>
             <p>Sign up <em>now</em> to get started.</p>
         </div>
-        <div class="text two">
+
+        <div class="text t-two">
             <p>You <em>know</em> you want to.</p>
         </div>
 
-        <form action="" method="get">
+        <form action="" id="form" method="get" onsubmit="">
             
-            <div id="whitebox">
+            <div id="box-w">
 
-                <div class="text three">Let's do this!</div>
+                <div class="text t-three">Let's do this!</div>
 
-                <div id="form">
-
-                    <div class="form left">
+                <div class="form-row">
+                    <div class="form-input form-left">
                         <label for="firstname">FIRST NAME</label>
-                        <input id="firstname" name="firstname" type="text" />
-                        <label for="email">EMAIL</label>
-                        <input id="email" name="email" type="email" />
-                        <label for="password">PASSWORD</label>
-                        <input id="password" name="password" type="password" />
+                        <input id="firstname" name="firstname" required type="text"/>
                     </div>
-
-                    <div class="form right">
+                    <div class="form-input form-right">
                         <label for="lastname">LAST NAME</label>
-                        <input id="lastname" name="lastname" type="text" />
+                        <input id="lastname" name="lastname" required type="text"/>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-input form-left">
+                        <label for="email">EMAIL</label>
+                        <input id="email" name="email" required type="email"
+                        oninvalid="this.setCustomValidity('Please enter a valid email address')"
+                        oninput="this.setCustomValidity('')"/>
+                    </div>
+                    <div class="form-input form-right">
                         <label for="phone">PHONE NUMBER</label>
                         <input id="phone" name="phone" type="tel" />
-                        <label for="confirm">CONFIRM PASSWORD</label>
-                        <input id="confirm" name="confirm" type="password" />
                     </div>
+                </div>
 
+                <div class="form-row">
+                    <div class="form-input form-left">
+                        <label for="password">PASSWORD</label>
+                        <input id="password" name="password" required type="password"/>
+                        <div id="on-error"></div>
+                    </div>
+                    <div class="form-input form-right">
+                        <label for="confirm">CONFIRM PASSWORD</label>
+                        <input id="confirm" name="confirm" required type="password"/>
+                    </div>
                 </div>
             
             </div>
